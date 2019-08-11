@@ -1,0 +1,86 @@
+<html> 
+  <head>
+  <title>JavaScript basic animation</title>
+      
+      
+      
+      <style>
+   
+        h2{
+            font-family: sans-serif;
+            font-size: 50px;
+            color: darkred;
+        }
+        button{
+            font-family: fantasy;
+            border-radius: 25px;
+        }
+        body{
+            background-color: coral;
+            background-image: url(img/water_drop-20.jpg);
+                text-align: center;
+        }
+        h3{
+            
+            font-size: 35px;
+            font-family: fantasy;
+        }
+          
+          pre{
+              
+              font-family: cursive;
+              font-size: 56px;
+              margin-top: 50px;
+              color: blue;
+              
+            }
+          span{
+              
+              width: 45px;
+              height: 34px;
+              font-size: 45px;
+          }
+    </style>
+    
+  <script type="text/javascript">
+  </script>
+  </head> <body onload="animate_string('target')">
+  <pre id="target">WELCOME..</pre>
+    <br>
+    <h2>TEMPERATURE CONVERTOR</h2>
+    <br>
+    <br>
+    <input id ="myid" type="text"placeholder="temp in fah">
+    <button onclick="myfunction()"><b>convert</b></button>
+    <br>
+    <br>
+   <h3>Temp in Degree Celsius :-</h3>
+    <span id = "id1" ></span>
+    
+    
+  </body> 
+</html>
+
+<script>
+function animate_string(id) 
+{
+    var element = document.getElementById(id);
+    var textNode = element.childNodes[0]; // assuming no other children
+    var text = textNode.data;
+
+setInterval(function () 
+{
+ text = text[text.length - 1] + text.substring(0, text.length - 1);
+  textNode.data = text;
+}, 400);
+    
+}
+
+
+function myfunction()
+        {
+            var a=document.getElementById("myid").value;
+            document.getElementById("id1").innerHTML = a;
+            var z = (a-32)*5/9;
+            document.getElementById("id1").innerHTML=z;
+        }</script>
